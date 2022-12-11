@@ -26,10 +26,10 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 #df1 = pd.read_csv('/Users/csuftitan/Downloads/charts.csv')
-df1 = pd.read_csv('https://drive.google.com/file/d/1fUjXJI49cMAsYlnU_l78gKOM5eKqx0os/view?usp=share_link')
-df1.head()
+#df1 = pd.read_csv('https://drive.google.com/file/d/1fUjXJI49cMAsYlnU_l78gKOM5eKqx0os/view?usp=share_link')
+#df1.head()
 st.header('Header of Dataframe')
-st.write(df1.head())
+#st.write(df1.head())
 
 spark = SparkSession.builder.appName("spark_app").getOrCreate()
 
