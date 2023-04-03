@@ -19,7 +19,7 @@ add_selectbox = st.sidebar.selectbox(
 )
 
 #df1 = pd.read_csv('/Users/csuftitan/Downloads/charts.csv')
-df1 = pd.read_csv('test.csv')
+df1 = pd.read_csv('spotify.csv')
 df1.head()
 st.header('Header of Dataframe')
 st.write(df1.head())
@@ -27,7 +27,7 @@ st.write(df1.head())
 spark = SparkSession.builder.appName("spark_app").getOrCreate()
 
 #df = spark.read.csv(path='/Users/csuftitan/Downloads/charts.csv', inferSchema=True, header=True)
-df = spark.read.csv('test.csv', inferSchema=True, header=True)
+df = spark.read.csv('spotify.csv', inferSchema=True, header=True)
 
 
 df = df.withColumn("rank", f.col("rank").cast(t.LongType())).withColumn("date", f.col("date").cast(t.DateType())).withColumn("streams", f.col("streams").cast(t.IntegerType()))
